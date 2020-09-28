@@ -7,4 +7,4 @@
 
 **Сайт**
 
-* [Ссылка на первый созданный сайт](https://aleksandrshirobokov.github.io/russian-travel/index.html)
+* [Ссылка на первый созданный сайт](https://aleksandrshirobokov.github.io/mesto/index.html)
