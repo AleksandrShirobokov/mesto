@@ -1,3 +1,10 @@
 .element__image-like {
     background-image: url('../../../images/Grouplike.svg');
+    width: 20.76px;
+    height: 18.13px;
+    border: none;
+    background-color: white;
+    align-self: center;
+    outline: none;
+    cursor: pointer;
 }

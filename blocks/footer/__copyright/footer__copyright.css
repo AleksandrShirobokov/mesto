@@ -1,16 +1,14 @@
-.profile__subtitle {
+.footer__copyright {
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 22px;
-    color: white;
-    grid-area: subtitle;
     margin: 0;
+    color: #545454;
 }
 
 @media screen and (max-width: 461px) {
-    .profile__subtitle  { 
-        text-align: center;
+    .footer__copyright { 
         font-size: 14px;
         line-height: 17px;
     }    

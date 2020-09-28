@@ -1,3 +1,23 @@
 .profile__button-edit {
-    background-image: url('../../../images/RectanglePen.svg');
+    background-image: url('../../../images/Edit\ Button.svg');
+    grid-area: button;
+    width: 24px;
+    height: 24px;
+    background-color: black;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.profile__button-edit:hover {
+    opacity: 0.7;
+    transition: .4s;
+}
+
+@media screen and (max-width: 461px) {
+    .profile__button-edit { 
+        position: absolute;
+        right: 15px;
+        top: 16px;
+    }    
 }

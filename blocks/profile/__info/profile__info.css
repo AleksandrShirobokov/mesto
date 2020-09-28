@@ -4,4 +4,13 @@
     grid-template-areas: 
     "title button"
     "subtitle   .";
+    margin: 58px 0 76px;
+}
+
+@media screen and (max-width: 461px) {
+    .profile__info { 
+        display: block;
+        margin: 10px 0 36px;
+        position: relative;
+    }    
 }

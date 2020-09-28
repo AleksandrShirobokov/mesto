@@ -1,8 +1,8 @@
 .element__item {
     display: flex;
     justify-content: space-between;
-    padding: 25px auto 31px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+    padding: 25px 15px 31px 21px;
+    background-color: white;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }

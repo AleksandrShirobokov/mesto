@@ -1,0 +1,7 @@
+.popup__title-edit {
+    border: none;
+    border-bottom: 1px solid #000000;
+    margin-top: 54px;
+    width: 100%;
+    outline: none;
+}

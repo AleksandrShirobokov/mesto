@@ -1,0 +1,11 @@
+.profile__items {
+    display: flex;
+}
+
+@media screen and (max-width: 461px) {
+    .profile__items { 
+        display: grid;
+        align-items: center;
+        margin-top: 36px;
+    }    
+}
