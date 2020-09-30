@@ -12,6 +12,7 @@
     border-radius: 2px;
     outline: none;
     cursor: pointer;
+    border: none;
 }
 
 .popup__save:hover {
@@ -19,9 +20,10 @@
     transition: 0.4s;
 }
 
-@media screen and (max-width: 461px) {
+@media screen and (max-width: 540px) {
     .popup__save { 
         font-size: 14px;
         line-height: 17px;
+        height: 46px;
     }    
 }

@@ -2,10 +2,10 @@
     display: flex;
 }
 
-@media screen and (max-width: 461px) {
+@media screen and (max-width: 540px) {
     .profile__items { 
         display: grid;
         align-items: center;
-        margin-top: 36px;
+        margin-top: 43px;
     }    
 }

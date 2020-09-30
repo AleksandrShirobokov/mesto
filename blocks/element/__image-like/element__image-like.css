@@ -1,10 +1,16 @@
 .element__image-like {
     background-image: url('../../../images/Grouplike.svg');
-    width: 20.76px;
+    min-width: 20.76px;
     height: 18.13px;
     border: none;
     background-color: white;
     align-self: center;
     outline: none;
     cursor: pointer;
+    margin-left: 30px;
+}
+
+.element__image-like:hover {
+    opacity: 0.7;
+    transition: .4s;
 }

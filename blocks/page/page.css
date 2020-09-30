@@ -1,28 +1,16 @@
 .page {
     max-width: 1280px;
     background-color: #000000;
-    padding: 45px 199px 60px;
+    padding-top: 45px;
+    padding-bottom:  60px;
     margin: 0 auto;
-    font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
+    font-family: "Inter", "Arial", "Helvetica", sans-serif;
 }
 
-@media screen and (max-width: 1091px) {
+@media screen and (max-width: 540px) {
     .page { 
-        max-width: 1091px;
-        padding: 45px 100px 60px;
+        padding-top: 28px;
+        padding-bottom:  45px;
     }    
 }    
 
-@media screen and (max-width: 781px) {
-    .page { 
-        max-width: 781px;
-        padding: 45px 50px 60px;
-    }    
-}
-
-@media screen and (max-width: 626px) {
-    .page { 
-        max-width: 626px;
-        padding: 45px 19px 36px;
-    }    
-}
