@@ -9,8 +9,8 @@ let formElement = document.querySelector('form');
 
 function openPopup() {
     popup.classList.add('popup_opened');
-    addNameInput.value = nameInput.textContent
-    addJobInput.value = jobInput.textContent
+    addNameInput.value = nameInput.textContent;
+    addJobInput.value = jobInput.textContent;
 }
 
 function closePopup() {
@@ -19,8 +19,8 @@ function closePopup() {
 
 function formSubmitHandler (evt) {
     evt.preventDefault(); 
-    nameInput.textContent = addNameInput.value
-    jobInput.textContent = addJobInput.value
+    nameInput.textContent = addNameInput.value;
+    jobInput.textContent = addJobInput.value;
     closePopup();
 }
 editButton.addEventListener('click', openPopup);
