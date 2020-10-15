@@ -1,3 +1,4 @@
 .element {
     display: inline-block;
+    position: relative;
 }

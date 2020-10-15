@@ -1,4 +1,4 @@
-.popup {
+.popup-extra {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
@@ -7,5 +7,5 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.5);    
+    background: rgba(0, 0, 0, 0.9);  
 }

@@ -1,0 +1,15 @@
+.popup-extra__image {
+    height:540px; 
+    width: 860px;
+    margin-left: auto;
+    margin-right: auto; 
+    object-fit: cover;
+}
+
+@media screen and (max-width: 540px) {
+    .popup-extra__image { 
+        height:290px; 
+        width: 240px;
+
+    }    
+}
