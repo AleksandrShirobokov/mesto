@@ -33,35 +33,35 @@
            <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
         </footer>
 
-        <section class="popup">
+        <section class="popup popup_type_edit">
             <div class="popup__container">
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <form class="popup__form" name="changeinfo">
-                    <input class="popup__input-text popup__input-text_type_name" name="name">
-                    <input class="popup__input-text popup__input-text_type_job" name="job">
+                <form class="popup__form popup__form_edit" name="changeinfo">
+                    <input class="popup__input-text popup__input-text_type_name" name="name" placeholder="Имя" required>
+                    <input class="popup__input-text popup__input-text_type_job" name="job" placeholder="Вид деятельности" required>
                     <button class="popup__save">Сохранить</button>
                     <button class="popup__close" type="button"></button>
                 </form> 
             </div>
         </section>
 
-        <section class="popup-image">
-            <div class="popup-image__container">
-                <h2 class="popup-image__title">Новое место</h2>
-                <form class="popup-image__form" name="changeimage">
-                    <input class="popup-image__input-text popup-image__input-text_type_name" placeholder="Название" name="names">
-                    <input class="popup-image__input-text popup-image__input-text_type_job" placeholder="Ссылка на картинку" name="jobs">
-                    <button class="popup-image__save">Сохранить</button>
-                    <button class="popup-image__close" type="button"></button>
+        <section class="popup popup_type_new-card">
+            <div class="popup__container">
+                <h2 class="popup__title">Новое место</h2>
+                <form class="popup__form popup__form_new-card" name="changeimage">
+                    <input class="popup__input-text popup__input-text_type_title" placeholder="Название" name="names">
+                    <input class="popup__input-text popup__input-text_type_link" placeholder="Ссылка на картинку" name="jobs">
+                    <button class="popup__save popup__save_new-card">Сохранить</button>
+                    <button class="popup__close popup__close_new-card" type="button"></button>
                 </form> 
             </div>
         </section>
 
-        <section class="popup-extra">
-            <div class="popup-extra__container">
-                    <img class="popup-extra__image">
-                    <h2 class="popup-extra__title"></h2>
-                    <button class="popup-extra__close" type="button"></button>
+        <section class="popup popup_type_image">
+            <div class="popup__wrapper">
+                    <button class="popup__close popup__close_image" type="button"></button>
+                    <img class="popup__image">
+                    <h2 class="popup__subtitle"></h2>
             </div>
         </section> 
 

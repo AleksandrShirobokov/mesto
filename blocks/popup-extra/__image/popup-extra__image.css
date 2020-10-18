@@ -3,7 +3,7 @@
     width: 860px;
     margin-left: auto;
     margin-right: auto; 
-    object-fit: cover;
+    object-fit: contain;
 }
 
 @media screen and (max-width: 540px) {
