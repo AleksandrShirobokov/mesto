@@ -69,6 +69,13 @@ const addLike = (evt) => {
     evt.target.classList.toggle('element__image-like_active');
 }
 
+const handlePreviewPicture = (data) => {   // функция, работающая с картинкой
+popupPicture.src = data.link;              // передача источника объекта дата
+popupPicture.alt = data.name;              // передача имени объекта дата к альту  
+popupSubtitle.textContent = data.name;     // передача имени объекта дата к подписи картинки 
+openPopup(popupImage)                      // функция открытия попапа с картинкой
+} 
+
 const getItems = (data) => {
 
     const card = template.content.cloneNode(true);
@@ -85,13 +92,8 @@ const getItems = (data) => {
     deleteButton.addEventListener('click', handlerRemove);
     likeButton.addEventListener('click', addLike) 
 
-    elementImage.addEventListener('click', (evt) => {  // функция увеличения картики
-        popupPicture.src = evt.target.src;             // текущий источник
-        popupSubtitle.textContent = evt.target.alt;    // текущее имя. Добрый день(или ночь)) Корректно ли использовать здесь данный метод? 
-        popupPicture.alt = evt.target.name;            // текущий альт
-        openPopup('openFullImage');
-    });
-
+    elementImage.addEventListener('click', () => handlePreviewPicture (data)); // передаю функцию, работающую с картинкой в качестве колбэка
+    
     return card;
 };
 
@@ -109,52 +111,36 @@ const bindHandlers = () =>
 renderList();
 bindHandlers();
 
-function openPopup(param) {
-    if (param === 'addNewCard') {
-        popupNewCard.classList.add('popup_opened');
-    }
-
-    if (param === 'openFullImage') {
-        popupImage.classList.add('popup_opened');
-    }
-
-    if (param === 'editProfile') {
-        popupEdit.classList.add('popup_opened');
-        addNameInput.value = nameInput.textContent;
-        addJobInput.value = jobInput.textContent;
-    }
+function openPopup(popup) {                 // универсальная функция для открытия попапа (Спасибо, что указали верное направление по созданию универсальной функции, код стал намного короче и красивее:)
+    popup.classList.add('popup_opened');
 }
 
-function closePopup(param) {
-    if (param === 'closeNewCard') {
-        popupNewCard.classList.remove('popup_opened');
-    }
-
-    if (param === 'closeFullImage') {
-        popupImage.classList.remove('popup_opened');
-    }
-
-    if (param === 'closeEditProfile') {
-        popupEdit.classList.remove('popup_opened');
-    }
+function closePopup(popup) {                // унииверсальная функция для закрытия попапа
+    popup.classList.remove('popup_opened');
 }
 
-function SubmitHandler(evt) {
+function submitHandlerEditProfile(evt) {
     evt.preventDefault();
     nameInput.textContent = addNameInput.value;
     jobInput.textContent = addJobInput.value;
-    closePopup('closeEditProfile');
+    closePopup(popupEdit);
 }
 
-function SubmitHandlerNewCard(evt) {
+function submitHandlerNewCard(evt) {
     evt.preventDefault();
-    closePopup('closeNewCard');
+    closePopup(popupNewCard);
 }
 
-popupImageClose.addEventListener('click', () => closePopup('closeFullImage'));
-closeButtonNewCard.addEventListener('click', () => closePopup('closeNewCard'));
-addButton.addEventListener('click', () => openPopup('addNewCard'));
-editButton.addEventListener('click', () => openPopup('editProfile'));
-closeButton.addEventListener('click', () => closePopup('closeEditProfile'));
-formEdit.addEventListener('submit', SubmitHandler);
-formNewCard.addEventListener('submit', SubmitHandlerNewCard);
+popupImageClose.addEventListener('click', () => closePopup(popupImage));        // вызываю анонимную функцию, которая принимает функцию закрытия конкретного попапа, установленного в качестве параметра функции
+closeButtonNewCard.addEventListener('click', () => closePopup(popupNewCard));
+addButton.addEventListener('click', () => openPopup(popupNewCard));             // вызываю анонимную функцию, которая принимает функцию открытия конкретного попапа, установленного в качестве параметра функции
+
+editButton.addEventListener('click', () => {     // в качестве колбэка установленна анонимная функция, работающая с передачей значений из профиля в попап изменения профиля
+    addJobInput.value = jobInput.textContent;
+    addNameInput.value = nameInput.textContent;
+    openPopup(popupEdit);
+}); 
+
+closeButton.addEventListener('click', () => closePopup(popupEdit));
+formEdit.addEventListener('submit', submitHandlerEditProfile);
+formNewCard.addEventListener('submit', submitHandlerNewCard);
