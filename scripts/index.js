@@ -1,3 +1,5 @@
+const overlay = document.querySelectorAll('.popup');
+
 const editButton = document.querySelector('.profile__button-edit');
 const nameInput = document.querySelector('.profile__title');
 const jobInput = document.querySelector('.profile__subtitle');
@@ -111,13 +113,43 @@ const bindHandlers = () =>
 renderList();
 bindHandlers();
 
-function openPopup(popup) {                 // универсальная функция для открытия попапа (Спасибо, что указали верное направление по созданию универсальной функции, код стал намного короче и красивее:)
-    popup.classList.add('popup_opened');
+function openPopup(popup) {                 // универсальная функция для открытия попапа 
+    popup.classList.add('popup_opened');  
 }
 
 function closePopup(popup) {                // унииверсальная функция для закрытия попапа
     popup.classList.remove('popup_opened');
 }
+
+// закрытие по оверлею
+
+const onClickOverlayListener = (evt) => {
+    if(evt.target === evt.currentTarget) {
+    closePopup(evt.target);
+}
+}
+
+overlay.forEach(evt => evt.addEventListener('click',onClickOverlayListener))
+
+
+//функция закрытия по Esc
+
+const closeOnEsc = document.addEventListener('keyup', (evt) => {
+    if(evt.key === 'Escape') {
+       overlay.forEach(evt => {
+           closePopup(evt);
+       })
+    }
+}) 
+
+// вторая функция закрытия по esc (Сломалась)
+
+/* const closeOnEsc = document.addEventListener('keyup', (evt) => {
+   if (overlay.target.classList.contains('.popup')) {
+       closePopup(evt.target)
+       console.log('close')
+    } 
+}) */
 
 function submitHandlerEditProfile(evt) {
     evt.preventDefault();
@@ -129,7 +161,7 @@ function submitHandlerEditProfile(evt) {
 function submitHandlerNewCard(evt) {
     evt.preventDefault();
     closePopup(popupNewCard);
-}
+}  
 
 popupImageClose.addEventListener('click', () => closePopup(popupImage));        // вызываю анонимную функцию, которая принимает функцию закрытия конкретного попапа, установленного в качестве параметра функции
 closeButtonNewCard.addEventListener('click', () => closePopup(popupNewCard));
