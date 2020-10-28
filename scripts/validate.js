@@ -1,22 +1,33 @@
+config = {
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input-text',
+    submitButtonSelector: '.popup__button',
+    inactiveButtonClass: 'popup__button_invalid',
+    inputErrorClass: 'popup__input-text_state_invalid',
+    errorClass: 'popup__error_visible'
+}
+
+enableValidation(config);
+
 
 function showError(input) {
     const error = document.querySelector(`#${input.id}-error`);
     error.textContent = input.validationMessage;
-    input.classList.add('popup__input-text_state_invalid');
+    input.classList.add(config.inputErrorClass);
 }
 
 function hideError(input) {
     const error = document.querySelector(`#${input.id}-error`);
     error.textContent = '';
-    input.classList.remove('popup__input-text_state_invalid');
+    input.classList.remove(config.inputErrorClass);
 }
 
 function toogleButtonState(buttonElem, isActive) {
     if (isActive) {
-        buttonElem.classList.remove('popup__button_invalid');
+        buttonElem.classList.remove(config.inactiveButtonClass);
         buttonElem.disabled = false;
     } else {
-        buttonElem.classList.add('popup__button_invalid');
+        buttonElem.classList.add(config.inactiveButtonClass);
         buttonElem.disabled = true;
     }
 }
@@ -31,7 +42,7 @@ function checkInputValidity(input) {
 }
 
 function setEventListeners(formElement, buttonElement) {
-    const inputs = Array.from(formElement.querySelectorAll('.popup__input-text'));
+    const inputs = Array.from(formElement.querySelectorAll(config.inputSelector));
    
     inputs.forEach(input => {
         input.addEventListener('input', (evt) => {
@@ -55,11 +66,11 @@ function enableValidation({formSelector, submitButtonSelector}) {
     });
 }
 
-enableValidation({
+/* enableValidation({
     formSelector: '.popup__form',
     inputSelector: '.popup__input-text',
     submitButtonSelector: '.popup__button',
     inactiveButtonClass: 'popup__button_invalid',
     inputErrorClass: 'popup__input_type_error',
     errorClass: 'popup__error_visible'
-  });
+  }); */

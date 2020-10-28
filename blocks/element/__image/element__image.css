@@ -4,6 +4,7 @@
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     vertical-align: middle;
-    height: 282px;
+    min-height: 282px;
+    max-height: 282px;
     cursor: pointer;
 }
