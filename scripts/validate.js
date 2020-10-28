@@ -10,19 +10,19 @@ config = {
 enableValidation(config);
 
 
-function showError(input) {
+function showError(input, config) {
     const error = document.querySelector(`#${input.id}-error`);
     error.textContent = input.validationMessage;
     input.classList.add(config.inputErrorClass);
 }
 
-function hideError(input) {
+function hideError(input, config) {
     const error = document.querySelector(`#${input.id}-error`);
     error.textContent = '';
     input.classList.remove(config.inputErrorClass);
 }
 
-function toogleButtonState(buttonElem, isActive) {
+function toogleButtonState(buttonElem, isActive, config) {
     if (isActive) {
         buttonElem.classList.remove(config.inactiveButtonClass);
         buttonElem.disabled = false;
@@ -32,23 +32,23 @@ function toogleButtonState(buttonElem, isActive) {
     }
 }
 
-function checkInputValidity(input) {
+function checkInputValidity(input, config) {
     if (!input.validity.valid) {
-        showError(input);
+        showError(input, config);
     }
     else {
-        hideError(input);
+        hideError(input, config);
     }
 }
 
-function setEventListeners(formElement, buttonElement) {
-    const inputs = Array.from(formElement.querySelectorAll(config.inputSelector));
+function setEventListeners(formElement, buttonElement, config) {   
+    const inputs = Array.from(formElement.querySelectorAll(config.inputSelector));  
    
     inputs.forEach(input => {
         input.addEventListener('input', (evt) => {
-            checkInputValidity(evt.target);
+            checkInputValidity(evt.target, config);
             const isAllValid = formElement.checkValidity();
-            toogleButtonState(buttonElement, isAllValid);
+            toogleButtonState(buttonElement, isAllValid, config);
         });
     });
 }
@@ -61,16 +61,7 @@ function enableValidation({formSelector, submitButtonSelector}) {
             evt.preventDefault();
         })
         const buttonElement = form.querySelector(submitButtonSelector);
-        setEventListeners(form, buttonElement);
-        toogleButtonState(buttonElement, form.checkValidity());
+        setEventListeners(form, buttonElement, config);
+        toogleButtonState(buttonElement, form.checkValidity(), config);
     });
 }
-
-/* enableValidation({
-    formSelector: '.popup__form',
-    inputSelector: '.popup__input-text',
-    submitButtonSelector: '.popup__button',
-    inactiveButtonClass: 'popup__button_invalid',
-    inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__error_visible'
-  }); */
