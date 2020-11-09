@@ -1,9 +1,9 @@
 config = {
     formSelector: '.popup__form',
-    inputSelector: '.popup__input-text',
+    inputSelector: '.popup__input',
     submitButtonSelector: '.popup__button',
     inactiveButtonClass: 'popup__button_invalid',
-    inputErrorClass: 'popup__input-text_state_invalid',
+    inputErrorClass: 'popup__input_state_invalid',
     errorClass: 'popup__error_visible'
 }
 

@@ -7,16 +7,16 @@ const addButton = document.querySelector('.profile__button-add');
 
 const popupEdit = document.querySelector('.popup_type_edit');
 const closeButtonEdit = document.querySelector('.popup__close_edit');
-const addNameInput = document.querySelector('.popup__input-text_type_name');
-const addJobInput = document.querySelector('.popup__input-text_type_job');
+const addNameInput = document.querySelector('.popup__input_type_name');
+const addJobInput = document.querySelector('.popup__input_type_job');
 const formEdit = document.querySelector('.popup__form_edit');
 
 const popupNewCard = document.querySelector('.popup_type_new-card');
 const closeButtonNewCard = document.querySelector('.popup__close_new-card');
 const formNewCard = document.querySelector('.popup__form_new-card');
 const addNewCard = document.querySelector('.popup__save_new-card');
-const inputLink = document.querySelector('.popup__input-text_type_link');
-const inputTitle = document.querySelector('.popup__input-text_type_title');
+const inputLink = document.querySelector('.popup__input_type_link');
+const inputTitle = document.querySelector('.popup__input_type_title');
 
 const popupPicture = document.querySelector('.popup__image');           // картинка в попапе
 const popupImage = document.querySelector('.popup_type_image');         // попап открытия картинки
