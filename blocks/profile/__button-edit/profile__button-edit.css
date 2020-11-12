@@ -8,11 +8,12 @@
     outline: none;
     cursor: pointer;
     margin-top: 20px;
+    opacity: 1;
+    transition: .2s step-end;
 }
 
 .profile__button-edit:hover {
-    opacity: 0.7;
-    transition: .4s;
+    opacity: 0.5;
 }
 
 @media screen and (max-width: 540px) {
