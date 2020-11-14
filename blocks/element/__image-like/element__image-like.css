@@ -9,9 +9,10 @@
     cursor: pointer;
     margin-left: 30px;
     opacity: 1;
-    transition: .4s ease-in-out;
+    transition: .2s ease-in-out;
 }
 
 .element__image-like:hover {
-    opacity: 0.6;
+    opacity: 0.9;
+    transform: scale(1.2);
 }

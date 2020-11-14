@@ -13,11 +13,12 @@
     outline: none;
     cursor: pointer;
     opacity: 1;
-    transition: .2s step-end;
+    transition: .2s ease-in;
 }
 
 .profile__button-add:hover {
     opacity: 0.5;
+    transform: scale(1.05);
 }
 
 @media screen and (max-width: 890px) {

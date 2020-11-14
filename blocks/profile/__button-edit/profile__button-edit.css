@@ -9,11 +9,12 @@
     cursor: pointer;
     margin-top: 20px;
     opacity: 1;
-    transition: .2s step-end;
+    transition: .2s ease-in;
 }
 
 .profile__button-edit:hover {
     opacity: 0.5;
+    transform: scale(1.1);
 }
 
 @media screen and (max-width: 540px) {
