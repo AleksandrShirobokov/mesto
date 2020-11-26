@@ -50,26 +50,26 @@ export const ESC_CODE = 'Escape';
 export const initialCards = [
     {
         name: 'Архыз',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+        link: 'https://i.playground.ru/i/07/60/21/00/pix/image.jpg'
     },
     {
         name: 'Челябинская область',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+        link: 'https://libertycity.ru/uploads/download/gtasa_globalmods/fulls/bqmr9pa2cfiad0c2o4fbd43ae3/15443076036186_zima5.jpg'
     },
     {
         name: 'Иваново',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+        link: 'https://cs1.gtavicecity.ru/screenshots/9a0d4/2018-03/original/ddc49d580f2f5ad0212eade06c0727a247cfb336/637877-enb2018-3-16-17-25-46-result.jpg'
     },
     {
         name: 'Камчатка',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+        link: 'https://cs2.gamemodding.com/images/a6a59228e44f9b3d5cffe39015504435e000366ae5438ca0f06f942f382ae127.jpg'
     },
     {
         name: 'Холмогорский район',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+        link: 'https://cs1.gtavicecity.ru/screenshots/9a0d4/2013-09/original/db38ee04a17c56d5bcf08b5c310677758181c2ee/76271-1331317640-gta-sa-2012-03-09-20-19-23-96.jpg'
     },
     {
         name: 'Байкал',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+        link: 'https://libertycity.ru/uploads/download/gtasa_objects/thumbs/sfmli3bkmv2fni5ubj384cpi35/1572774474150_4.jpg'
     },
 ];
