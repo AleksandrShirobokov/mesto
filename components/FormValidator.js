@@ -1,4 +1,5 @@
-export class FormValidator {
+// Экспорт валидации форм
+export default class FormValidator {
     constructor(set, formElement) {
         this._formElement = formElement;
         this._set = set;

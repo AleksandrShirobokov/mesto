@@ -38,10 +38,10 @@ export const popupSubtitle = document.querySelector('.popup__subtitle');       /
 export const popupImageClose = document.querySelector('.popup__close_image');  // закрытие попапа
 
 // Переменная елементов
-export const list = document.querySelector('.elements');
+export const list = '.elements';
 
 // Переменная шаблона
-export const cardSelector = '#template';
+export const cardSelector = '.template';
 
 // Переменная клавиши 'Escape'
 export const ESC_CODE = 'Escape';

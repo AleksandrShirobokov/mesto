@@ -1,8 +1,9 @@
-export class Card {
-    constructor(data, cardSelector, fullImage) {
-        this._data = data;
+export default class Card {
+    constructor(data, cardSelector, handleCardClick) {
+        this._name = data.name;
+        this._link = data.link;
         this._cardSelector = cardSelector;
-        this._fullImage = fullImage;
+        this._handleCardClick = handleCardClick;
     }
     
     // Получение шаблона карточки
@@ -32,25 +33,25 @@ export class Card {
         this._element.querySelector('.element__image-like').addEventListener('click', () => {
             this._addLike()
         });
-
+    
         this._element.querySelector('.element__delete').addEventListener('click', () => {
             this._handlerRemove()
         });
-        
-        this._element.querySelector('.element__image').addEventListener('click', () => {
-            this._fullImage(this._data);
+            
+        this._elementImage.addEventListener('click', () => {
+            this._handleCardClick(this._name, this._link);
         });
     }
 
     // Генерация карточки
     generateCard() {
         this._element = this._getTemplate();
-        this._setEventListeners();
         this._elementImage = this._element.querySelector('.element__image');
-        this._element.querySelector('.element__title').textContent = this._data.name;
-        this._elementImage.src = this._data.link;
-        this._elementImage.alt = this._data.name;
-        
+        this._element.querySelector('.element__title').textContent = this._name;
+        this._elementImage.src = this._link;
+        this._elementImage.alt = this._name;
+        this._setEventListeners();
+            
         return this._element;  // Возврат элемента
     }
 

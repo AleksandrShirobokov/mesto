@@ -36,7 +36,7 @@
         <section class="popup popup_type_edit">
             <div class="popup__container">
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <form class="popup__form popup__form_edit" name="changeinfo">
+                <form class="popup__form" name="changeinfo">
                     <input class="popup__input popup__input_type_name" id="user-name" name="name" placeholder="Имя" required minlength="2" maxlength="40">
                     <span id="user-name-error" class="error"></span>
                     <input class="popup__input popup__input_type_job"  id="about"     name="job"  placeholder="Вид деятельности" required minlength="2" maxlength="200">
@@ -50,7 +50,7 @@
         <section class="popup popup_type_new-card">
             <div class="popup__container">
                 <h2 class="popup__title">Новое место</h2>
-                <form class="popup__form popup__form_new-card" name="changeimage">
+                <form class="popup__form" name="changeimage">
                     <input class="popup__input popup__input_type_title" id="name-card" placeholder="Название" name="names" minlength="2" maxlength="30" required>
                     <span id="name-card-error" class="error"></span>
                     <input class="popup__input popup__input_type_link" type="url" id="link" placeholder="Ссылка на картинку" name="jobs" required>
@@ -71,7 +71,7 @@
 
     </div>
 
-    <template id="template">
+    <template class="template">
         <div class="element">
             <img class="element__image">
             <button class="element__delete" type="button"></button>
@@ -82,6 +82,6 @@
         </div>
     </template>
 
-    <script type="module" src="./scripts/index.js"></script>
+    <script type="module" src="./pages/index.js"></script>
 </body>
 </html>
