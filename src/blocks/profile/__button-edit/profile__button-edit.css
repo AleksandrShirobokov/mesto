@@ -1,5 +1,5 @@
 .profile__button-edit {
-    background-image: url('../../../images/Edit\ Button.svg');
+    background-image: url('../../../images/EditButton.svg');
     grid-area: button;
     width: 24px;
     height: 24px;

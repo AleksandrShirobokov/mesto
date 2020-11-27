@@ -1,3 +1,6 @@
+// Импорт главного файла стилей
+import './index.css'; 
+
 // Импорт валидации
 import FormValidator from '../components/FormValidator.js';
 
