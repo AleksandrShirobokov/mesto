@@ -12,15 +12,13 @@ export default class Popup {
 // Метод открытия попапа
     open() {
         this._popupSelector.classList.add(this._popupOpen);
+        this._popupSelector.addEventListener('click', this._handleOverlayClose.bind(this));
         document.addEventListener('keydown', this._handleEscClose.bind(this));
-        document.addEventListener('click', this._handleOverlayClose.bind(this));
     }
 
 // Метод закрытия попапа
     close() {
         this._popupSelector.classList.remove(this._popupOpen);
-        document.removeEventListener('keydown', this._handleEscClose.bind(this));
-        document.removeEventListener('click', this._handleOverlayClose.bind(this));
     }
 
 // Метод закрытия по нажатию на оверлэй
@@ -40,6 +38,5 @@ export default class Popup {
 // Слушатель для кнопки закрытия
     setEventListeners() {
         this._closeButton.addEventListener('click', this.close.bind(this));
-        this._popupSelector.addEventListener('click', this._handleOverlayClose.bind(this));
     }
 }
