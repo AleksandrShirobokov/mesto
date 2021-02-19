@@ -6,6 +6,5 @@
     .profile__items { 
         display: grid;
         align-items: center;
-        margin-top: 43px;
     }    
 }

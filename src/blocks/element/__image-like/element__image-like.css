@@ -7,7 +7,6 @@
     align-self: center;
     outline: none;
     cursor: pointer;
-    margin-left: 30px;
     opacity: 1;
     transition: .2s ease-in-out;
 }

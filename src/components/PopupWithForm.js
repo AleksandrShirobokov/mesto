@@ -3,12 +3,14 @@ import Popup from './Popup.js'
 
 // Экспорт попапа с формой, наследуемый от попапа 
 export default class PopupWithForm extends Popup {
-    constructor(popupSelector, handleFormSubmit) {
+    constructor(popupSelector, {handleFormSubmit}) {
         super(popupSelector);
         this._handleFormSubmit = handleFormSubmit;
         this._formPopup = this._popupSelector.querySelector('.popup__form');
         // Создание массива для всех инпутов в форме
         this._inputPopup = Array.from(this._formPopup.querySelectorAll('.popup__input'));
+        this._submitButton = this._popupSelector.querySelector('.popup__button');
+        this._submitText = this._submitButton.textContent;
     }
 
     // Получение значений инпутов
@@ -23,7 +25,7 @@ export default class PopupWithForm extends Popup {
     _submitHandler(evt) {
         evt.preventDefault();
         this._handleFormSubmit(this._getInputValues());
-        this.close();
+        //this.close();
     }
 
     // Добавление слушателя
@@ -36,5 +38,14 @@ export default class PopupWithForm extends Popup {
     close() {
         this._formPopup.reset();
         super.close();
+    }
+
+    // Процесс загрузки
+    renderLoading(isLoading) {
+        if(isLoading) {
+            this._submitButton.textContent = this._submitText;
+        } else {
+            this._submitButton.textContent = 'Сохранение...'
+        }
     }
 }

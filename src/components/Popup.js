@@ -7,7 +7,8 @@ export default class Popup {
         this._popupSelector = popupSelector;
         this._popupOpen = 'popup_opened';
         this._closeButton = popupSelector.querySelector('.popup__close');
-        this._handleEscClose = this._handleEscClose.bind(this); // Привязываю bind к селектору
+        this._handleEscClose = this._handleEscClose.bind(this);
+        this._close = this.close.bind(this) // Привязываю bind к селектору
     }
 
 // Метод открытия попапа
@@ -27,7 +28,6 @@ export default class Popup {
     _handleOverlayClose(evt) {
         if(evt.target === evt.currentTarget) {
             this.close();
-            console.log("s")
         } 
     }
 
@@ -35,7 +35,6 @@ export default class Popup {
     _handleEscClose(evt) {
         if(evt.key === ESC_CODE) {
             this.close();
-            console.log("x")
         } 
     }
 

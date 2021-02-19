@@ -7,7 +7,6 @@
     align-self: center;
     outline: none;
     cursor: pointer;
-    margin-left: 30px;
 }
 
 .element__image-like_active:hover {

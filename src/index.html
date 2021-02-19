@@ -13,7 +13,10 @@
        <main class="content">
             <section class="profile">
                 <div class="profile__items">
-                    <img class="profile__image" src="<%=require('./images/imageKust.jpg')%>" alt="Жак-If Кусто">
+                    <div class="profile__wrapper">
+                        <img class="profile__image" src="<%=require('./images/imageKust.jpg')%>" alt="Жак-If Кусто">
+                        <button class="profile__cursor"></button>
+                    </div>
                     <div class="profile__info">
                         <h1 class="profile__title">Жак-Ив Кусто</h1>
                         <p class="profile__subtitle">Исследователь океана</p>
@@ -38,7 +41,7 @@
                 <form class="popup__form" name="changeinfo">
                     <input class="popup__input popup__input_type_name" id="user-name" name="name" placeholder="Имя" required minlength="2" maxlength="40">
                     <span id="user-name-error" class="error"></span>
-                    <input class="popup__input popup__input_type_job"  id="about"     name="job"  placeholder="Вид деятельности" required minlength="2" maxlength="200">
+                    <input class="popup__input popup__input_type_job"  id="about"     name="about"  placeholder="Вид деятельности" required minlength="2" maxlength="200">
                     <span id="about-error" class="error"></span>
                     <button class="popup__save popup__button">Сохранить</button>
                     <button class="popup__close popup__close_edit" type="button"></button>
@@ -50,12 +53,24 @@
             <div class="popup__container">
                 <h2 class="popup__title">Новое место</h2>
                 <form class="popup__form" name="changeimage">
-                    <input class="popup__input popup__input_type_title" id="name-card" placeholder="Название" name="names" minlength="2" maxlength="30" required>
+                    <input class="popup__input popup__input_type_title" id="name-card" placeholder="Название" name="name" minlength="2" maxlength="30" required>
                     <span id="name-card-error" class="error"></span>
-                    <input class="popup__input popup__input_type_link" type="url" id="link" placeholder="Ссылка на картинку" name="jobs" required>
+                    <input class="popup__input popup__input_type_link" type="url" id="link" placeholder="Ссылка на картинку" name="link" required>
                     <span id="link-error" class="error"></span>
                     <button class="popup__save popup__save_new-card popup__button">Сохранить</button>
                     <button class="popup__close popup__close_new-card" type="button"></button>
+                </form> 
+            </div>
+        </section>
+
+        <section class="popup popup_type_profile">
+            <div class="popup__container">
+                <h2 class="popup__title">Обновить аватар</h2>
+                <form class="popup__form" name="changeavatar">
+                    <input class="popup__input popup__input_type_link" type="url" id="avatar-link" placeholder="Ссылка на картинку" name="link" required>
+                    <span id="avatar-link-error" class="error"></span>
+                    <button class="popup__save popup__save_avatar popup__button">Сохранить</button>
+                    <button class="popup__close popup__close_avatar" type="button"></button>
                 </form> 
             </div>
         </section>
@@ -68,6 +83,16 @@
             </div>
         </section> 
 
+        <section class="popup popup_type_delete">
+            <div class="popup__delete">
+                <h2 class="popup__title">Вы уверены?</h2>
+                <form class="popup__form" name="deletecard">
+                    <button class="popup__save popup__save_delete popup__button">Удалить</button>
+                    <button class="popup__close popup__close_delete" type="button"></button>
+                </form>
+            </div>
+        </section>
+
     </div>
 
     <template class="template">
@@ -76,7 +101,10 @@
             <button class="element__delete" type="button"></button>
             <div class="element__item">
                 <h2 class="element__title"></h2>
-                <button class="element__image-like" type="button"></button>
+                <div class="element__wrapper">
+                    <button class="element__image-like" type="button"></button>
+                    <p class="element__image-like-number"></p>
+                </div>
             </div>
         </div>
     </template>

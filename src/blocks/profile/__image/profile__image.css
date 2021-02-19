@@ -6,10 +6,13 @@
     margin: auto;
     margin-right: 30px;
     margin-top: 40px;
+    cursor: pointer;
+    opacity: 1;
+    transition:.2s ease-in-out;
 }
 
-@media screen and (max-width: 540px) {
-    .profile__image { 
-        margin: auto;
-    }    
+@media (max-width: 768px) {
+    .profile__image {
+        margin: 40px auto 0;
+    }
 }
