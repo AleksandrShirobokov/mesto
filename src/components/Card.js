@@ -52,10 +52,10 @@ export default class Card {
         this._likeIcon.addEventListener('click', () => {
             if(this._likeIcon.classList.contains('element__image-like_active')) {
                 this._deleteLikeClick();
-                this._offLike();
+                /* this._offLike(); */
             } else {
                 this._handleLikeClick();
-                this._onLike();
+                /* this._onLike(); */
             }
         });
             
@@ -94,6 +94,7 @@ export default class Card {
         .then((res) => {
             this._likes = res.likes.length;
             this._likeNumber.textContent = this._likes;
+            this._onLike();
         })
     }
 
@@ -104,6 +105,7 @@ export default class Card {
         .then((res) => {
             this._likes = res.likes.length;
             this._likeNumber.textContent = this._likes;
+            this._offLike();
         })
     }
 

@@ -50,7 +50,7 @@ let userId;
 
 //Переменная Апи
 const api = new Api({
-    url:"https://mesto.nomoreparties.co/v1/cohort-20/cards/",
+    url:"https://mesto.nomoreparties.co/v1/cohort-20",
     headers: {
         authorization:'3fe373ef-33cc-49b3-8f02-e54eba1f506e',
         "content-type":'application/json'
@@ -70,27 +70,30 @@ const popupDelete = new PopupWithDel(popupDeleteSelector, {
         api.delCard(cardId)
         .then(() => {
             popupDelete.deleteCard(); 
+            popupDelete.close();
         })
         .catch((err) => {
             console.log(err);
         })
         .finally(() => {
             popupDelete.renderLoading(false);
-            popupDelete.close();
         })
     }
 })
 
-// Переменная с информацией о пользователе
-api.getUserInfoMe()
-    .then((data) =>{
-        userInfo.setUserInfo(data);
-        userInfo.setAvatar(data);
-        userId = data._id;
-    })
-    .catch((err) => {
-        console.log(err);
-    })
+// Промис с информацией пользователя и карточками
+Promise.all([
+    api.getUserInfoMe(),
+    api.getInitialCards()
+])
+.then((values) => {
+    const [userData, cardsData] = values;
+    userInfo.setUserInfo(userData);
+    userInfo.setAvatar(userData);
+    userId = userData._id;
+    cardList.renderItems(cardsData.reverse());
+})
+.catch(err => console.log(err));
 
 // Переменная с добавлением разметки карточки
 const cardList = new Section({ 
@@ -115,26 +118,20 @@ const addNewCard = (data) => {
     return card.generateCard()
 }
 
-// Загрузка карточек с сервера
-api.getInitialCards()
-.then((data) => {
-    cardList.renderItems(data)
-})
-
 // Переменная с формой добавления новой карточки
 const popupAddCard = new PopupWithForm(popupNewCard, {
     handleFormSubmit:(data) => {
         popupAddCard.renderLoading(false)
         api.postNewCard(data)
         .then((data)=> {
-            cardList.addItem(addNewCard(data))
+            cardList.addItem(addNewCard(data));
+            popupAddCard.close();
         })
         .catch((err) => {
             console.log(err)
         })
         .finally(() => {
             popupAddCard.renderLoading(true);
-            popupAddCard.close();
         })
     }
 });
@@ -146,14 +143,14 @@ const popupEditProfile = new PopupWithForm(
         popupEditProfile.renderLoading(false)
         api.changeUserInfo(data)
         .then((data) => {
-            userInfo.setUserInfo(data)
+            userInfo.setUserInfo(data);
+            popupEditProfile.close();
         })
         .catch((err) => {
             console.log(err)
         })
         .finally(() => {
             popupEditProfile.renderLoading(true);
-            popupEditProfile.close()
         })
     }})
 )
@@ -165,14 +162,14 @@ const popupEditAvatar = new PopupWithForm(
         popupEditAvatar.renderLoading(false)
         api.editAvatar(data)
         .then((data) => {
-            userInfo.setAvatar(data)
+            userInfo.setAvatar(data);
+            popupEditAvatar.close();
         })
         .catch((err) => {
             console.log(err)
         })
         .finally(() => {
             popupEditAvatar.renderLoading(true);
-            popupEditAvatar.close()
         })
     }})
 )
