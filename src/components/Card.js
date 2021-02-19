@@ -96,6 +96,7 @@ export default class Card {
             this._likeNumber.textContent = this._likes;
             this._onLike();
         })
+        .catch(err => console.log(err));
     }
 
     // Удаление лайка
@@ -107,6 +108,7 @@ export default class Card {
             this._likeNumber.textContent = this._likes;
             this._offLike();
         })
+        .catch(err => console.log(err));
     }
 
     // Проверка на принадлежность лайка    
