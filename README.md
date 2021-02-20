@@ -7,4 +7,4 @@
 
 **Сайт**
 
-* [Ссылка на первый созданный сайт](https://aleksandrshirobokov.github.io/mesto)
+* [Ссылка на первый созданный сайт](https://aleksandrshirobokov.github.io/mesto/)
