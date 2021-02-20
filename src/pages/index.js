@@ -166,7 +166,7 @@ const popupEditAvatar = new PopupWithForm(
             popupEditAvatar.close();
         })
         .catch((err) => {
-            console.log(err)
+            console.log(err);
         })
         .finally(() => {
             popupEditAvatar.renderLoading(true);
